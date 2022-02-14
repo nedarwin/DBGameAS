@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
+	int count;
 	static DBManager dbManager;
 
 	EditText playerName;
@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
 		gameResult.startAnimation(play);
 
 	}
+
 
 	public void showHoF(View v) {
 		startActivity(new Intent(this, HoFActivity.class));

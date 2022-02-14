@@ -35,15 +35,21 @@ public class DBManager {
 		db.execSQL("INSERT INTO RESULTS VALUES ('" + username + "', " + score
 				+ ");");
 	}
-	// Player One 150
-	// Запрос
-	// INSERT INTO RESULTS VALUES('Player One', 150);
-
-
+	//User1 150 'User', 150);DROP TABLE RESULTS --
+	//zapretit '
+	//"INSERT INTO RESULTS VALUES ('User1',150);
+	//
+	public int gCount(){
+		Cursor c2 = db.rawQuery("SELECT COUNT(*) as count FROM RESULTS;",null );
+		c2.moveToFirst();
+		return c2.getInt(0);
+	}
 
 	ArrayList<Result> getAllResults() {
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT * FROM RESULTS;", null);
+		Cursor cursor = db.rawQuery("SELECT * FROM RESULTS ORDER BY SCORE DESC;", null);
+		Cursor c = db.rawQuery("SELECT MAX(SCORE) FROM RESULTS;",null );
+
 		boolean hasMoreData = cursor.moveToFirst();
 
 		while (hasMoreData) {
@@ -53,12 +59,10 @@ public class DBManager {
 			data.add(new Result(name, score));
 			hasMoreData = cursor.moveToNext();
 		}
-
 		return data;
 	}
 
 	private void createTablesIfNeedBe() {
 		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERNAME TEXT, SCORE INTEGER);");
 	}
-
 }

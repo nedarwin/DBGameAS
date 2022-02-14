@@ -11,4 +11,23 @@
     android:id="@+id/sum"
     />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="95dp"
+        android:layout_height="66dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="104dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="64dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="125dp"
+        android:layout_height="59dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="419dp" />
+
 </RelativeLayout>

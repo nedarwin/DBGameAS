@@ -1,5 +1,7 @@
 package ru.samsung.itschool.dbgame;
 
+import static android.icu.text.MessagePattern.ArgType.SELECT;
+
 import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ public class HoFActivity extends Activity {
 		String resStr = "";
 		for (Result res : results)
 		{
+
 			resStr += res.name + ": " + res.score + "\n";
 		}	
 		restv.setText(resStr);
