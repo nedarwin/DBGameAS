@@ -18,6 +18,5 @@ public class StatActivity extends Activity {
         DBManager dbManager = DBManager.getInstance(this);
         TextView t1 = findViewById(R.id.textView);
         t1.setText(dbManager.gCount()+"");
-
     }
 }

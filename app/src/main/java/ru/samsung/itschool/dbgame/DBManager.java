@@ -44,11 +44,12 @@ public class DBManager {
 		c2.moveToFirst();
 		return c2.getInt(0);
 	}
-
+	public void delete(){
+		db.delete("RESULTS", null, null);
+	}
 	ArrayList<Result> getAllResults() {
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT * FROM RESULTS ORDER BY SCORE DESC;", null);
-		Cursor c = db.rawQuery("SELECT MAX(SCORE) FROM RESULTS;",null );
+		Cursor cursor = db.rawQuery("SELECT * FROM RESULTS;", null);
 
 		boolean hasMoreData = cursor.moveToFirst();
 

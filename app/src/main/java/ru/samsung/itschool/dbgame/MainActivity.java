@@ -33,7 +33,9 @@ public class MainActivity extends Activity {
 	     Intent intent = new Intent(this, StatActivity.class);
 		 startActivity(intent);
 	}
-
+	public void onCl(View v) {
+		dbManager.delete();
+	}
 	public void play(View v) {
 
 		Animation play = AnimationUtils.loadAnimation(this, R.anim.fadin);
